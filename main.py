@@ -27,25 +27,16 @@ assistant = Client(
 
 call = PyTgCalls(assistant)
 
-
 @bot.on_message(filters.command("start"))
 async def start(_, message):
-    await message.reply_text(
-        "✅ Bot berhasil online"
-    )
-
+    await message.reply_text("✅ BOT HIDUP")
 
 @bot.on_message(filters.command("ping"))
 async def ping(_, message):
-    await message.reply_text(
-        "🏓 PONG"
-    )
-
+    await message.reply_text("🏓 PONG")
 
 async def main():
-
     print("STARTING BOT...")
-
     await assistant.start()
     print("ASSISTANT ONLINE")
 
@@ -55,11 +46,9 @@ async def main():
     await bot.start()
 
     me = await bot.get_me()
-
     print(f"BOT ONLINE @{me.username}")
 
     await asyncio.Event().wait()
-
 
 if __name__ == "__main__":
     asyncio.run(main())
